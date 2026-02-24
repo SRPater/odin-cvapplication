@@ -1,0 +1,65 @@
+.education-item-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.education-item-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.education-item-form input:nth-child(1),
+.education-item-form input:nth-child(2) {
+  grid-column: span 2;
+}
+
+.item-actions {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.education-item-display {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.education-item-form:first-child,
+.education-item-display:first-child {
+  padding-top: 0;
+}
+
+.education-item-display + .education-item-display,
+.education-item-display + .education-item-form,
+.education-item-form + .education-item-display,
+.education-item-form + .education-item-form {
+  border-top: 1px solid #ccc;
+}
+
+.edu-main h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+}
+
+.edu-main .degree {
+  margin: 2px 0 0 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.edu-meta p {
+  margin: 4px 0 0 0;
+  font-size: 0.9rem;
+  color: #757575;
+  font-style: italic;
+}

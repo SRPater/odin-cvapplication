@@ -5,9 +5,11 @@ function Section({ title, children, isEditing, onToggle }) {
     <section className="cv-section">
       <div className="section-header">
         <h2>{title}</h2>
-        <button type="button" onClick={onToggle}>
-          {isEditing ? 'Submit' : 'Edit'}
-        </button>
+        {onToggle && (
+          <button type="button" onClick={onToggle}>
+            {isEditing ? 'Save' : 'Edit'}
+          </button>
+        )}
       </div>
       <div className="section-content">
         {children}

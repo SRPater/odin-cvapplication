@@ -1,9 +1,14 @@
 import '../styles/GeneralInfo.css';
 
-function GeneralInfo({ data, onChange }) {
+function GeneralInfo({ data, onChange, onToggle }) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onToggle();
+  }
+
   if (data.isEditing) {
     return (
-      <div className="general-info-form">
+      <form className="general-info-form" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Full Name"
@@ -40,7 +45,7 @@ function GeneralInfo({ data, onChange }) {
           value={data.link}
           onChange={(e) => onChange('link', e.target.value)}
         />
-      </div>
+      </form>
     );
   }
 
