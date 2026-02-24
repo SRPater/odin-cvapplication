@@ -1,0 +1,17 @@
+body {
+  background-color: #f0f2f5;
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+}

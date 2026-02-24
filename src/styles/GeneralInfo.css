@@ -1,0 +1,63 @@
+.general-info-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.general-info-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.general-info-form input:nth-child(1),
+.general-info-form input:nth-child(2) {
+  grid-column: span 2;
+}
+
+.general-info-display {
+  text-align: center;
+}
+
+.general-info-display h1 {
+  margin: 0 0 5px 0;
+  font-size: 2.5rem;
+  color: #1a1a1a;
+}
+
+.title {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.material-symbols-outlined {
+  color: #007bff;
+  font-size: 24px;
+}
+
+.contact-item p,
+.contact-item a {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #444;
+  text-align: center;
+  display: inline-block;
+  line-height: 1.2;
+}
