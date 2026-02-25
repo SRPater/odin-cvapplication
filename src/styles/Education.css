@@ -1,13 +1,13 @@
 .education-item-form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr fr;
   gap: 15px;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .education-item-form input {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   font-size: 14px;
   width: 100%;
@@ -28,30 +28,46 @@
 }
 
 .education-item-display {
-  padding: 10px 0;
+  padding: 20px 15px;
+  margin: 0 -15px;
   cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.education-item-form:first-child,
-.education-item-display:first-child {
-  padding-top: 0;
+.education-item-display:hover {
+  background-color: #e2e8f0;
 }
 
-.education-item-display + .education-item-display,
-.education-item-display + .education-item-form,
-.education-item-form + .education-item-display,
-.education-item-form + .education-item-form {
-  border-top: 1px solid #ccc;
+.education-item-display:first-of-type,
+.education-item-form:first-of-type {
+  padding-top: 15px;
+}
+
+.education-item-display + .education-item-display::before,
+.education-item-display + .education-item-form::before,
+.education-item-form + .education-item-display::before,
+.education-item-form + .education-item-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 15px;
+  right: 15px;
+  border-top: 1px solid var(--border-color);
 }
 
 .edu-main h3 {
   margin: 0;
   font-size: 1.1rem;
-  color: #1a1a1a;
+  color: var(--text-main);
+  line-height: 1.2;
 }
 
 .edu-main .degree {
-  margin: 2px 0 0 0;
+  margin: 4px 0 0 0;
   font-size: 1rem;
   font-weight: 500;
   color: #444;
@@ -60,6 +76,27 @@
 .edu-meta p {
   margin: 4px 0 0 0;
   font-size: 0.9rem;
-  color: #757575;
+  color: var(--text-muted);
   font-style: italic;
+}
+
+.education-item-display::after {
+  content: 'edit';
+  font-family: 'Material Symbols Outlined';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+  font-size: 28px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.education-item-display:hover::after {
+  opacity: 1;
+}
+
+.add-btn {
+  margin-top: 20px;
 }
