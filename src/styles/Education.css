@@ -1,8 +1,10 @@
 .education-item-form {
   display: grid;
-  grid-template-columns: 1fr fr;
+  grid-template-columns: 1fr 1fr;
   gap: 15px;
-  padding: 20px 0;
+  padding: 20px 15px;
+  position: relative;
+  margin: 0 -15px;
 }
 
 .education-item-form input {

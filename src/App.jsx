@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Section from './components/Section.jsx';
 import GeneralInfo from './components/GeneralInfo.jsx';
 import Education from './components/Education.jsx';
+import Experience from './components/Experience.jsx';
 
 import './styles/App.css';
 
@@ -78,11 +79,42 @@ function App() {
         isEditing: true,
       },
     ]);
-  }
+  };
 
   const deleteEducation = (id) => {
     setEducation(education.filter(edu => edu.id !== id));
-  }
+  };
+
+  const handleExperienceChange = (id, field, value) => {
+    setExperience(experience.map(exp =>
+      exp.id === id ? { ...exp, [field]: value } : exp
+    ));
+  };
+
+  const toggleExperienceEdit = (id) => {
+    setExperience(experience.map(exp =>
+      exp.id === id ? { ...exp, isEditing: !exp.isEditing } : exp
+    ));
+  };
+
+  const addExperience = () => {
+    setExperience([
+      ...experience,
+      {
+        id: crypto.randomUUID(),
+        company: '',
+        position: '',
+        description: '',
+        dateFrom: '',
+        dateUntil: '',
+        isEditing: true,
+      },
+    ]);
+  };
+
+  const deleteExperience = (id) => {
+    setExperience(experience.filter(exp => exp.id !== id));
+  };
 
   return (
     <div className="app-container">
@@ -112,6 +144,21 @@ function App() {
         ))}
         <button type="button" className="add-btn" onClick={addEducation}>
           + Add Education
+        </button>
+      </Section>
+
+      <Section title="Experience">
+        {experience.map((exp) => (
+          <Experience
+            key={exp.id}
+            data={exp}
+            onChange={handleExperienceChange}
+            onDelete={deleteExperience}
+            onToggle={toggleExperienceEdit}
+          />
+        ))}
+        <button type="button" className="add-btn" onClick={addExperience}>
+          + Add Experience
         </button>
       </Section>
     </div>
